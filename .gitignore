@@ -1,0 +1,14 @@
+# https://www.freecodecamp.org/news/gitignore-what-is-it-and-how-to-add-to-repo/
+
+# ignore node modules
+node_modules
+
+# ignore package-lock.json
+# kazu na stackoverflow da ga ne bi trebalo dodavati u .gitignore
+# package-lock.json
+
+# ostalo
+/slike
+Praktikum_infobip_notes.md
+Praktikum_infobip_notes.pdf
+Praktikum_infobip.pdf
