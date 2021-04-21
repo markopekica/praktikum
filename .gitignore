@@ -3,7 +3,10 @@
 # ignore node modules
 node_modules
 
-# ostalo
+# ignore package-lock.json
+# package-lock.json
+
+# ignore ostalo
 /slike
 Praktikum_infobip_notes.md
 Praktikum_infobip_notes.pdf
