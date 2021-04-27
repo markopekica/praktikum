@@ -18,7 +18,6 @@ describe('funkcija koja za dani datum vraca redni broj tog dana u godini', funct
     it('za 01.03.2001. potrebno je vratiti 60', function () {
         expect(dayOfYear(2001, 3, 1)).to.equal(60)
     });
-    //malo testova rubnih slučajeva (1600-ta godina, 1900 ta godina, 12ti mjesec…)
     //1600-ta godina
     it('za 1.3.1600. potrebno je vratiti 61', () => {
         expect(dayOfYear(1600, 3, 1)).to.equal(61)
