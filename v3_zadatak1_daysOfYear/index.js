@@ -18,6 +18,10 @@ function dayOfYear (year, month, day) {
     }
     let result = 0
 
+    if ( (month==2) && !(isLeapYear(year)) && (day==29)) {
+        return 'greska - 29.2. ne postoji u godini koja nije prjestupna'
+    }
+
     for (let i=1; i<month; i++) {
         if ( i==2 && isLeapYear(year) ) {
             result += months['2Leap']
