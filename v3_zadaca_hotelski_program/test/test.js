@@ -30,8 +30,25 @@ describe('', () => {
         ar.forEach( (member, index) => expect(ar[index]).to.have.keys(['from', 'to', 'price']) )
     })
     it('funkcija treba vratiti uredjen argument', () => {
-        let mapa = new Map()
-        
-        expect(priceListFromatter(ar)).to.equal(ar)
+
+        // logika u testu?
+        // help pls
+
+        let reduced = ar.reduce( (accumulator, val) => {
+            if( !accumulator[val.price] ){
+                accumulator[val.price] = []
+            }
+            accumulator[val.price].push(val)
+            return accumulator
+        }, {})
+    
+        let L = []
+    
+        Object.getOwnPropertyNames(reduced).forEach( (price) => {
+            L.push(price + ' : ' + reduced[price].map(x => x.from + ' do ' + x.to).join(' , '))
+        })
+
+        expect( priceListFromatter(ar) ).to.eql( L.sort() )
+
     })
 })

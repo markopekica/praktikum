@@ -25,24 +25,25 @@ function priceListFromatter(priceList) {
     
     if( !(priceList instanceof Object) ) throw Error()
 
-    //sort by key
-    //let sorted = priceList.sort( (a, b) => a.price - b.price )
-
+    // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce#grouping_objects_by_a_property
+    // grouping_objects_by_a_property
     let reduced = priceList.reduce( (accumulator, val) => {
         if( !accumulator[val.price] ){
             accumulator[val.price] = []
         }
         accumulator[val.price].push(val)
         return accumulator
-    }, {})
+    }, {} )
 
-    return reduced
+    let L = []
+
+    Object.getOwnPropertyNames(reduced).forEach( (price) => {
+        L.push(price + ' : ' + reduced[price].map(x => x.from + ' do ' + x.to).join(' , '))
+    })
+    
+    return L.sort()
 
 }
-
-
-let mapa = new Map()
-console.log(mapa)
 
 
 console.log(priceListFromatter(ar))
