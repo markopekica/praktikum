@@ -17,6 +17,14 @@ describe('trigram funkcija', () => {
         expect( trigramGenerator("cuz u") ).to.eql( [] )
     })
     it('ako parametar ima 3 rijeci vrati zadnju', () => {
-        expect( trigramGenerator("i know you") ).to.equal( ["you"] )
+        expect( trigramGenerator("i know you") ).to.eql(  { 'i know': [ 'you' ] }  )
+    })
+    it('ako je parametar: "I wish I may I wish I might". Potrebno je vratiti sljedeci objekt', () => {
+        expect( trigramGenerator("I wish I may I wish I might") ).to.eql( {
+            'I wish': [ 'I', 'I' ],
+            'wish I': [ 'may', 'might' ],
+            'I may': [ 'I' ],
+            'may I': [ 'wish' ]
+          } )
     })
 })
