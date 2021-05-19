@@ -1,10 +1,15 @@
 function trigramGenerator(text) {
   if (typeof text !== 'string') throw new Error();
 
-  const words = whitespaceHandler(text).toLowerCase().split(' ');
-  let chunks = generateChunks(words);
+  const words = whitespaceHandler(text).split(' ');
+  
+  let chunks = generateChunks(lowerCaseSveOsimI(words));
 
   return generateTrigrams(chunks);
+}
+
+function lowerCaseSveOsimI(wordArray) {
+  return wordArray.map( (word) => word != 'I' ? word.toLowerCase() : word );
 }
 
 function whitespaceHandler(text) {

@@ -111,13 +111,10 @@ describe('textParsing', function() {
 
         expect(Velika).to.eql(mala);
   });
-});
 
 
-describe('Iproblem', function() {
-        
-   it('is required for "I" to always be upper case', function () {
-
-        
+    it('is required for "I" to always be upper case', function () {
+        expect(trigramGenerator("string with I and I")).to.eql(new Map([['string with', ['I']], ['with I', ['and']], ['I and', ['I']]]))
     });
-  });
+
+});
