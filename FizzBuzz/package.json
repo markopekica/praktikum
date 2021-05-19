@@ -6,13 +6,20 @@
   "directories": {
     "test": "test"
   },
+  "watch": {
+    "test": "{src,test}/*.js"
+  },
   "scripts": {
-    "test": "mocha"
+    "test": "mocha",
+    "watch": "npm-watch"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "chai": "^4.3.4",
     "mocha": "^8.4.0"
+  },
+  "dependencies": {
+    "npm-watch": "^0.9.0"
   }
 }
