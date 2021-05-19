@@ -1,0 +1,25 @@
+{
+  "name": "trigramgenerator",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "npm-watch": "^0.9.0"
+  },
+  "devDependencies": {
+    "chai": "^4.3.4",
+    "mocha": "^8.4.0"
+  },
+  "watch": {
+    "test": "{src,test}/*.js"
+  },
+  "scripts": {
+    "test": "mocha",
+    "watch": "npm-watch"
+  },
+  "author": "",
+  "license": "ISC"
+}
